@@ -46,3 +46,76 @@ These hypotheses will be tested using exploratory analysis and modeling
 - The model **should not** be employed to punish employees who are predicted to be "high risk".
 - Sensitive variables should be treated with caution to prevent bias.
 - Finding should inform retention-oriented strategies, not automated personal decision.
+
+---
+
+# ANALYZE
+
+---
+
+### 1. Data Understanding and Exploration
+The initial analysis involved checking the quality of the data and looking for patterns in the turnover data.
+Steps involved:
+- Checked for missing or inconsistent data
+- Checked the class balance of the turnover feature
+- Checked the distributions of workload, satisfaction, tenure, and compensation
+- Checked correlations between features and attrition.
+
+Descriptive statistics were employed to check for unusual averages or values. Data visualization tools (histograms, box plots, bar charts) were used to ch eck for patterns in the data across departments and roles.
+
+### 2. The main aims of EDA
+1. To confirm of reject the initial hypotheses
+2. To check for potential multicollinearity
+3. To determine which variables are good predictors
+4. To check if class imbalance was a problem that needed to be addressed
+
+The ethical check at this stage ensured that no sensitive attribute was being used inappropriately to make decisions.
+
+---
+
+# CONSTRUCT
+
+---
+
+### Model Development
+Features identified through EDA were employed to develop classification models.
+
+Approach:
+- Split data into training and testing sets (80/20 split, stratified if necessary)
+- Encode features for categorical variables
+- Develop baseline model: Logistic Regression
+- Develop machine learning models: Decision Tree, Random Forest (and XGBoost, if used)
+
+Model Evaluation criteria:
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- ROC-AUC
+
+Particular emphasis was given to the recall value for employees who left, since not being able to detect at-risk employees would decrease business value.
+
+---
+
+# EXECUTE
+
+---
+
+### Insights and Business Recommendations
+The evaluation of the model revealed the most important predictors of employee turnover, including workload intensity, satisfaction levels, and tenure patterns.
+
+**Key Findings:**
+- Identified high-risk employee groups
+- Estimated the relative weights of key drivers
+- Evaluated the model's reliability and limitations
+
+Recommendations:
+- Track employees with high workload intensity and low satisfaction
+- Re-evaluate project assignment processes
+- Enhance engagement initiatives in high-risk departments
+- Apply predictive knowledge to retention efforts, not punishment
+
+Limitations & Future Directions:
+- Model accuracy relies on survey data quality
+- Additional information (engagement trends, manager feedback, exit interviews) could enhance predictions
+- Periodic retraining would be necessary for long-term use
